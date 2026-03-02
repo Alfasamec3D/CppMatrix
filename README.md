@@ -1,2 +1,2 @@
-# -ppMatrix
+# CppMatrix
 C++ Matrix project
