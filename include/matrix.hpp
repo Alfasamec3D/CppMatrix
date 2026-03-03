@@ -1,4 +1,5 @@
 #pragma once
+#include<vector>
 namespace Linalg {
 template <typename T>
 class Matrix {
@@ -60,4 +61,7 @@ class Matrix {
     return det;
   }
 };
+
+int result(const std::vector<int> &input);
+
 } // namespace Linalg
