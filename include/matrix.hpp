@@ -10,7 +10,7 @@ class Matrix {
  public:
   Matrix(const size_t& rows, const size_t& cols) : rows_(rows), cols_(cols) {}
   template <typename It>
-  Matrix(const size_t& rows, const size_t& cols, It start, It finish)
+  Matrix(const int& rows, const int& cols, It start, It finish)
       : rows_(rows), cols_(cols) {
     if (std::distance(start, finish) < rows_ * cols_)
       throw std::invalid_argument(
