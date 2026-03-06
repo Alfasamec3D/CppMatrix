@@ -1,7 +1,6 @@
 # CppMatrix
-C++ Matrix project
-# CppRange_quaries
- This program counts all elements with keys between 2 objects.
+
+This program returns determinant of the matrix.
 
 ## How to build
 
@@ -17,7 +16,7 @@ C++ Matrix project
 
 ## How to test
 
-1. In terminal use `build/tests` command.
+1. In terminal use `build/endTest` command.
 2. See the results of the test.
 
 ## How to run
