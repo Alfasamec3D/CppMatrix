@@ -1,22 +1,21 @@
-cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.13)
 
-project("Matrix")
+project("Matrix" LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 17)
 
-enable_testing()
-
-find_package(GTest REQUIRED)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(main main.cpp)
 
-add_executable(endTest test/test.cpp)
+add_library(matrix lib/matrix.cpp)
 
-add_library(matrix src/matrix.cpp)
+target_include_directories(matrix PUBLIC "include")
 
-include_directories("include")
+target_link_libraries(main PRIVATE matrix)
 
-target_link_libraries (main matrix)
 
-target_link_libraries(endTest matrix gtest gtest_main)
-
-add_test(NAME MatrixEndTest COMMAND endTest)
+option(BUILD_TESTS "Build tests" ON)
+if (BUILD_TESTS)
+    add_subdirectory(tests)
+endif()
